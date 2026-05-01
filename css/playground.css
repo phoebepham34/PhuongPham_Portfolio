@@ -1,0 +1,9 @@
+header{
+    background-color: var(--Blue-100);
+    padding: var(--spacing-5xl);
+    margin: var(--spacing-5xl);
+}
+
+main{
+    padding: var(--spacing-5xl);
+}
