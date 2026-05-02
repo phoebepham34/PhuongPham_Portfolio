@@ -273,7 +273,8 @@
        
             </div>
 
-<form action="https://formsubmit.co/phamphoebe34@gmail.com" method="POST">
+<form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="e45e2a95-be58-43e2-baf7-f7787e87b4e6">
   <div>
   <label>Name</label>
   <input class="u-full-width" type="text" name="name" required placeholder=" Enter your name">
@@ -281,6 +282,9 @@
   <div>
   <label>Email</label>
   <input class="u-full-width" type="text" name="email" required placeholder=" Enter your email">
+  </div>
+  <label>Subject</label>
+  <input class="u-full-width" type="text" name="subject" required placeholder=" Enter subject">
   </div>
 
   <!-- <div>
@@ -294,12 +298,12 @@
   </div>
 <div> -->
   <label>Message</label>
-  <textarea class="u-full-width" style="min-height: 200px;" name="msg" required placeholder="Enter your message"></textarea>
+  <textarea class="u-full-width" style="min-height: 200px;" name="message" required placeholder="Enter your message"></textarea>
 </div>
 <div>
   <label>
     <input type="checkbox">
-    <span class="label-body"> i agree to the terms and conditions</span>
+    <span class="label-body"> I agree to the terms and conditions</span>
   </label>
 </div>
 <div>
@@ -340,7 +344,44 @@
 </script>
 
 
+<script>
+    const form = document.getElementById('form');
+const submitBtn = form.querySelector('button[type="submit"]');
 
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    formData.append("access_key", "e45e2a95-be58-43e2-baf7-f7787e87b4e6");
+
+    const originalText = submitBtn.textContent;
+
+    submitBtn.textContent = "Sending...";
+    submitBtn.disabled = true;
+
+    try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            alert("Success! Your message has been sent.");
+            form.reset();
+        } else {
+            alert("Error: " + data.message);
+        }
+
+    } catch (error) {
+        alert("Something went wrong. Please try again.");
+    } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    }
+});
+</script>
 
 
 </body>
