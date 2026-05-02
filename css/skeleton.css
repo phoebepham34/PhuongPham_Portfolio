@@ -430,7 +430,7 @@ there.
     overflow: hidden;
     width: 100%;
     
-    
+    right:0;
     left: 0;
     padding-top: 80px;
     z-index: 1;
@@ -445,7 +445,7 @@ there.
     justify-content: center;
     align-items: center;
     color: #322a2a;
-    padding: 30%;
+    padding: 32px;
     
     top: 0;
     right: 0;
