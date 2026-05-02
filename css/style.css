@@ -68,7 +68,20 @@ background-color: #EEEBD0;
 
 .hero-section h3{
     width: 50%;
-    height: 82px;
+    
+    color: var(--Grey-950);
+
+    /* Header/H3 */
+    font-family: Afacad;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px; /* 104.167% */
+    text-align: center;
+}
+.hero-section h2{
+    width: 50%;
+    
     color: var(--Grey-950);
 
     /* Header/H3 */
@@ -79,7 +92,6 @@ background-color: #EEEBD0;
     line-height: 30px; /* 104.167% */
     text-align: center;
 }
-
 .hero-section h1{
     color: var(--Grey-950);
 
@@ -124,7 +136,7 @@ height: 145px;
     font-weight: 400;
     line-height: 19px; /* 118.75% */
     letter-spacing: -0.32px;
-    width: 80%
+    width: 90%;
 }
 
 .sention2_link{
